@@ -11,14 +11,15 @@
         <h1>Bounce</h1>
     </div>
     <div class="canvas-container">
+        <p id="ball_count_lbl">Current amount: 0</p>
         <canvas id="view"></canvas>
     </div>
     <div class="btn-container">
         <button id="animation_btn">Start</button>
     </div>
     <div class="slider-container">
-        <p>Slide to change the amount of balls (when the animation starts)</p>
-        <input type="range" id="slider" min="10" max="100" step="1" value="50" title="Slide to increase or decrease amount of balls"/>
+        <p>Slide to change the amount of balls when the animation starts.</p>
+        <input type="range" id="slider" min="1" max="100" step="1" value="50" title="Slide to increase or decrease amount of balls"/>
     </div>
     <script type="module" src="index.js"></script>
 </body>

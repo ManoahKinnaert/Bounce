@@ -5,6 +5,7 @@ import {Vector} from './Balls/vector.js';
 const canvas = document.getElementById("view");
 const animation_btn = document.getElementById("animation_btn");
 const ball_slider = document.getElementById("slider");
+const ball_count_lbl = document.getElementById("ball_count_lbl");
 
 canvas.width = 600;
 canvas.height = 400;
@@ -15,7 +16,9 @@ const colors = ["red", "magenta", "blue", "orange", "green", "yellow", "purple",
 let running = false;
 
 animation_btn.onclick = animationBtnClick;
-
+ball_slider.addEventListener("input", () => {
+    ball_count_lbl.textContent = "Current amount: " + slider.value;
+  });
 function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
