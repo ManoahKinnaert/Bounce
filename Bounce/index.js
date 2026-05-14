@@ -7,12 +7,26 @@ canvas.width = 600;
 canvas.height = 400;
 var ctx = canvas.getContext("2d");
 
-let balls = []
+let balls = [];
+const colors = ["red", "magenta", "blue", "orange", "green", "yellow", "purple", "cyan"];
 
+function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 
 function spawn(radius=15, position, vector, color) {
     let ball = new Ball(radius, position, vector, color);
     balls.push(ball);
+}
+
+
+
+function spawnNRandom(n=10) {
+    for (let i = 0; i < n; i++) {
+        let bal = new Ball(15, new Position(randomInt(20, 100), randomInt(20, 100)), new Vector(randomInt(-10, 10), randomInt(-10, 10)),
+        colors[randomInt(0, colors.length - 1)]);
+        balls.push(bal);
+    }
 }
 
 function update_balls(val, index, array) {
@@ -31,8 +45,5 @@ function runloop() {
 
     requestAnimationFrame(runloop);
 }
-
-spawn(15, new Position(50, 50), new Vector(-10, -10), "yellow");
-
-spawn(15, new Position(20, 50), new Vector(-16, -10), "red");
+spawnNRandom(15);
 runloop();
