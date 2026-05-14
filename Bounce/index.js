@@ -23,8 +23,6 @@ function spawn(radius=15, position, vector, color) {
     balls.push(ball);
 }
 
-
-
 function spawnNRandom(n=10) {
     for (let i = 0; i < n; i++) {
         let bal = new Ball(15, new Position(randomInt(20, 100), randomInt(20, 100)), new Vector(randomInt(-10, 10), randomInt(-10, 10)),
