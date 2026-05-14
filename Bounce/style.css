@@ -46,3 +46,7 @@ place-items: center;
     border: none;
     border-radius: 20px;
 }
+
+#slider {
+    margin-top: 10px;
+}

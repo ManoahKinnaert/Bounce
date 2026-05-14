@@ -4,6 +4,8 @@ import {Vector} from './Balls/vector.js';
 
 const canvas = document.getElementById("view");
 const animation_btn = document.getElementById("animation_btn");
+const ball_slider = document.getElementById("slider");
+
 canvas.width = 600;
 canvas.height = 400;
 var ctx = canvas.getContext("2d");
@@ -51,7 +53,7 @@ function runloop() {
 
 function startAnimation() {
     running = true;
-    spawnNRandom(15);
+    spawnNRandom(ball_slider.value);
     runloop();
 }
 
