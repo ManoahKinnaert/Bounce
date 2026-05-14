@@ -66,9 +66,11 @@ function animationBtnClick() {
     if (!running) {
         startAnimation();
         animation_btn.textContent = "End";
+        animation_btn.style.backgroundColor = "red";
     }
     else { 
         endAnimation(); 
         animation_btn.textContent = "Start";
+        animation_btn.style.backgroundColor = "lime";
     }
 }

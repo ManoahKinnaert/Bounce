@@ -1,3 +1,7 @@
+html {
+    font-family: Verdana;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -12,7 +16,6 @@ body {
 }
 
 .header h1 {
-    font-family: Verdana;
     font-size: 35px;
     color: white;
     padding: 10px;
@@ -34,4 +37,12 @@ place-items: center;
     margin-top: 50px;
     display: grid;
     place-items: center;
+}
+
+#animation_btn {
+    background-color: lime;
+    font-size: 20px;
+    padding: 10px 100px 10px 100px;
+    border: none;
+    border-radius: 20px;
 }
