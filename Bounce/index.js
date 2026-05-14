@@ -3,12 +3,16 @@ import {Position} from './Balls/position.js';
 import {Vector} from './Balls/vector.js';
 
 const canvas = document.getElementById("view");
+const animation_btn = document.getElementById("animation_btn");
 canvas.width = 600;
 canvas.height = 400;
 var ctx = canvas.getContext("2d");
 
 let balls = [];
 const colors = ["red", "magenta", "blue", "orange", "green", "yellow", "purple", "cyan"];
+let running = false;
+
+animation_btn.onclick = animationBtnClick;
 
 function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
@@ -43,7 +47,28 @@ function runloop() {
     balls.forEach(update_balls)
     balls.forEach(render);
 
-    requestAnimationFrame(runloop);
+
+    if (running) requestAnimationFrame(runloop);
 }
-spawnNRandom(15);
-runloop();
+
+function startAnimation() {
+    running = true;
+    spawnNRandom(15);
+    runloop();
+}
+
+function endAnimation() {
+    running = false;
+    balls = [];
+}
+
+function animationBtnClick() {
+    if (!running) {
+        startAnimation();
+        animation_btn.textContent = "End";
+    }
+    else { 
+        endAnimation(); 
+        animation_btn.textContent = "Start";
+    }
+}
